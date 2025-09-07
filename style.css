@@ -24,7 +24,20 @@ body {
         0 0 40px #0ff,
         0 0 80px #0ff;
     animation: flicker 1.5s infinite alternate;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+}
+
+/* Неоновое предупреждение */
+.warning-text {
+    font-size: 1.3em;
+    color: #f00;
+    text-shadow:
+        0 0 5px #f00,
+        0 0 10px #f00,
+        0 0 20px #f00,
+        0 0 40px #f00;
+    margin-bottom: 30px;
+    animation: flicker-red 1.5s infinite alternate;
 }
 
 .download-btn {
@@ -54,7 +67,6 @@ body {
     transition: opacity 0.5s;
 }
 
-/* Появление текста при наведении на кнопку */
 .download-btn:hover + .game-description {
     opacity: 1;
 }
@@ -67,6 +79,19 @@ body {
             0 0 20px #0ff,
             0 0 40px #0ff,
             0 0 80px #0ff;
+    }
+    20%, 22%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+@keyframes flicker-red {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 5px #f00,
+            0 0 10px #f00,
+            0 0 20px #f00,
+            0 0 40px #f00;
     }
     20%, 22%, 24%, 55% {
         text-shadow: none;
