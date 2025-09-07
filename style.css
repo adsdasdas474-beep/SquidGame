@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+}
+
+.neon-text {
+    font-size: 4em;
+    color: #0ff;
+    text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+    animation: flicker 1.5s infinite alternate;
+    margin-bottom: 40px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    color: #0ff;
+    text-decoration: none;
+    border: 2px solid #0ff;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #0ff;
+    position: relative;
+}
+
+.download-btn:hover {
+    color: #fff;
+    background-color: #0ff;
+    box-shadow: 0 0 40px #0ff, 0 0 80px #0ff;
+}
+
+.game-description {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ff0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Появление текста при наведении на кнопку */
+.download-btn:hover + .game-description {
+    opacity: 1;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 5px #0ff,
+            0 0 10px #0ff,
+            0 0 20px #0ff,
+            0 0 40px #0ff,
+            0 0 80px #0ff;
+    }
+    20%, 22%, 24%, 55% {
+        text-shadow: none;
+    }
+}
